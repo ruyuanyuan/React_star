@@ -14,5 +14,11 @@ module.exports = {
   },
   plugins:[
     htmlPlugin
-  ]
+  ],
+
+  module:{
+    rules:[
+      {test:  /\.jsx|.js$/, use:'babel-loader',exclude:/node_modules/}
+    ]
+  }
 }
