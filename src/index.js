@@ -1,40 +1,22 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+// import './es6_class_static_props'
+// import './es6_class_static_fun'
+// import './class_extends'
+// import './class_extends_fun'
+import List from './components/List'
 
-import Hello from '@/components/Hello'
-
-// const mydiv = React.createElement('h1',{id:'myh1'},'这是一个h1标签')
-const h1 = <h1>我是h1</h1>
-const aa = 10
-const arrs = ['大连','东北','小孩','冻屁股']
-
-arrs[1]='测试'
-
-const newArr=[]
-arrs.forEach(item=>{
-   const temp=<h5 key={item}>{item}</h5>
-   newArr.push(temp)
-})
-
-//bable转化标签
-const mydiv = 
-<div id='mydiv' className='qqgit' title='我的div'>
-  {aa*8}
-  <hr/>
-  {h1}
-  <hr/>
-  {arrs}
-  <hr/>
-  {newArr}
-{arrs.map(item=><h1 key={item}>{item}</h1>)}
-</div>
-
-
-
-const dog = {
-  name:'大黄',
-  age:12,
-  sex:'X'
+const user1={
+  name:'张三',
+  age:18
 }
-
-ReactDom.render(<Hello {...dog}></Hello>,document.getElementById('app'))
+const user2={
+  name:'王五',
+  age:28
+}
+ReactDom.render(<div>
+  {/* 实例化组件 */}
+  <List {...user1}></List>
+  <hr/>
+  <List {...user2}></List>
+</div>,document.getElementById('app'))
