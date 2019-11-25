@@ -20,5 +20,12 @@ module.exports = {
     rules:[
       {test:  /\.jsx|.js$/, use:'babel-loader',exclude:/node_modules/}
     ]
+  },
+  resolve:{
+    extensions:['.js','.jsx','.json'],
+    alias:{
+      '@':path.resolve(__dirname,'./src')
+    }
   }
+  
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 
+import Hello from '@/components/Hello'
+
 // const mydiv = React.createElement('h1',{id:'myh1'},'这是一个h1标签')
 const h1 = <h1>我是h1</h1>
 const aa = 10
@@ -10,7 +12,7 @@ arrs[1]='测试'
 
 const newArr=[]
 arrs.forEach(item=>{
-   const temp=<h5>{item}</h5>
+   const temp=<h5 key={item}>{item}</h5>
    newArr.push(temp)
 })
 
@@ -24,7 +26,15 @@ const mydiv =
   {arrs}
   <hr/>
   {newArr}
-{arrs.map(item=><h1>{item}</h1>)}
+{arrs.map(item=><h1 key={item}>{item}</h1>)}
 </div>
 
-ReactDom.render(mydiv,document.getElementById('app'))
+
+
+const dog = {
+  name:'大黄',
+  age:12,
+  sex:'X'
+}
+
+ReactDom.render(<Hello {...dog}></Hello>,document.getElementById('app'))
