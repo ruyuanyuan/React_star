@@ -1,0 +1,16 @@
+.content{
+  border: 1px dashed #999;
+  padding:10px;
+  margin:20px;
+}
+.title{
+  font-size:14px;
+}
+.doc{
+  font-size:12px;
+}
+/* 共有类名 */
+:global(.text){
+  font-style: italic;
+}
+

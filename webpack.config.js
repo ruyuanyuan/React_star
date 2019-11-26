@@ -18,7 +18,32 @@ module.exports = {
 
   module:{
     rules:[
-      {test:  /\.jsx|.js$/, use:'babel-loader',exclude:/node_modules/}
+      {test:  /\.jsx|.js$/, use:'babel-loader',exclude:/node_modules/},
+      {
+        test:/\.css/,
+        use:[
+          'style-loader',
+          {
+            loader:'css-loader', //css loader启用模块化 加？modules
+          }
+        ]
+      },
+      {
+        test:/\.scss/,
+        use:[
+          'style-loader',
+          {
+            loader:'css-loader', //css loader启用模块化 加？modules
+            options:{
+              modules:{
+                localIdentName: '[path][name]-[local]-[hash:base64:5]'
+              }
+            }
+          },
+          'sass-loader'
+        ]
+      },
+      {test:  /\.jpg|.png|.svg|.gif|.ttf|.woff2|.eot$/, use:'url-loader'},
     ]
   },
   resolve:{
@@ -26,6 +51,6 @@ module.exports = {
     alias:{
       '@':path.resolve(__dirname,'./src')
     }
-  }
+  },
   
 }

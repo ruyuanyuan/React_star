@@ -1,5 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
+import cssObj from '@/css/cmtlist.scss'
+console.log(cssObj)
 class CmtList extends React.Component{
   constructor(){
     super()
@@ -14,9 +16,15 @@ class CmtList extends React.Component{
       ]
     }
   }
+  // render(){
+  //   return <div>
+  //           <h2 style={{color:'red',fontSize:'35px',fontWeight:200,textAlign:'center'}}>这是评论列表组件</h2>
+  //           {this.state.CommentList.map(item=><ListItem {...item} key={item.id}></ListItem>)}
+  //       </div>
+  // }
   render(){
-    return <div >
-            <h2>这是评论列表组件</h2>
+    return <div>
+            <h2 className={cssObj.title +' '+ 'text'}>这是评论列表组件</h2>
             {this.state.CommentList.map(item=><ListItem {...item} key={item.id}></ListItem>)}
         </div>
   }
