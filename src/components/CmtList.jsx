@@ -1,6 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
 import BtnEvent from '@/components/BtnEvent'
+// import BindInput from '@/components/BindInput'
 import cssObj from '@/css/cmtlist.scss'
 console.log(cssObj)
 class CmtList extends React.Component{
@@ -27,6 +28,7 @@ class CmtList extends React.Component{
     return <div>
             <h2 className={cssObj.title +' '+ 'text'}>这是评论列表组件</h2>
             <BtnEvent></BtnEvent>
+            {/* <BindInput></BindInput> */}
             {this.state.CommentList.map(item=><ListItem {...item} key={item.id}></ListItem>)}
         </div>
   }
